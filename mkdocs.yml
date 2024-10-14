@@ -84,12 +84,13 @@ nav:
       - Docker: docker.md
 
     - Mega Tutorials:
-      - Bookstore DB Example: exercises/mt_01.md
-      - Research DB Example: exercises/mt_02.md
-      - Webshop RDB Example: exercises/mt_03.md
-      - Employees Graph DB Example: exercises/mt_04.md
-      - Userprofile Document Store DB Example: exercises/mt_05.md
-      - Booking Wide-Column Store DB Example: exercises/mt_06.md
+      - Bookstore (MariaDB): exercises/mt_01.md
+      - Research (MariaDB): exercises/mt_02.md
+      - Webshop (MariaDB): exercises/mt_03.md
+      - Employees (Neo4J): exercises/mt_04.md
+      - Userprofile (MongoDB): exercises/mt_05.md
+      - Cassandra:
+        - Booking (Cassandra): exercises/mt_06.md
 
     - Individual Exercises:
       - Individualaufgaben RDBS: exercises/ds_exercise_01_individuals.md
