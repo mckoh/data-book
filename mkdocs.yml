@@ -84,13 +84,16 @@ nav:
       - Docker: docker.md
 
     - Mega Tutorials:
-      - Bookstore (MariaDB): exercises/mt_01.md
-      - Research (MariaDB): exercises/mt_02.md
-      - Webshop (MariaDB): exercises/mt_03.md
-      - Employees (Neo4J): exercises/mt_04.md
-      - Userprofile (MongoDB): exercises/mt_05.md
+      - MariaDB:
+        - Bookstore: exercises/mt_bookstore.md
+        - Research: exercises/mt_research.md
+        - Web Shop: exercises/mt_webshop.md
+      - Neo4J:
+        - Employees: exercises/mt_employee.md
+      - MongoDB:
+        -  User Profile: exercises/mt_userprofile.md
       - Cassandra:
-        - Booking (Cassandra): exercises/mt_06.md
+        - Booking: exercises/mt_booking.md
 
     - Individual Exercises:
       - Individualaufgaben RDBS: exercises/ds_exercise_01_individuals.md
