@@ -77,18 +77,23 @@ nav:
       - 1:n Beziehung: mariadb_tutorial/onemany.md
       - n:m Beziehung: mariadb_tutorial/manymany.md
       - WITH-Klausel: mariadb_tutorial/with.md
+
     - Other Tutorials:
       - DBS Interaktion: dbs_interaction.md
       - Data Engineering Checkliste: de_checklist.md
       - Docker: docker.md
-    - Master Data Science & Intelligent Analytics:
-      - Mega-Tutorium RDBS: exercises/ds_exercise_01_megatutorial.md
+
+    - Mega Tutorials:
+      - Bookstore DB Example: exercises/mt_01.md
+      - Research DB Example: exercises/mt_02.md
+      - Webshop RDB Example: exercises/mt_03.md
+      - Employees Graph DB Example: exercises/mt_04.md
+      - Userprofile Document Store DB Example: exercises/mt_05.md
+      - Booking Wide-Column Store DB Example: exercises/mt_06.md
+
+    - Individual Exercises:
       - Individualaufgaben RDBS: exercises/ds_exercise_01_individuals.md
-      - Mega-Tutorium Neo4J: exercises/ds_exercise_02_megatutorial.md
       - Individualaufgaben Neo4J: exercises/ds_exercise_02_individuals.md
-      - Mega-Tutorium MongoDB: exercises/ds_exercise_03_megatutorial.md
       - Individualaufgaben MongoDB: exercises/ds_exercise_03_individuals.md
-      - Mega-Tutorium Cassandra: exercises/ds_exercise_04_megatutorial.md
-    - Master Web Communication & Information Systems:
-      - Mega-Tutorium RDBS: exercises/wcis_exercise_01_megatutorial.md
+
     - Über: about.md
