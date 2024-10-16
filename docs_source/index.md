@@ -23,3 +23,9 @@ Egal, ob Sie Student, Berufseinsteiger oder erfahrener Profi sind, dieses Buch i
 Jedes Kapitel ist so strukturiert, dass es Ihnen einen klaren und verständlichen Überblick über das jeweilige Thema bietet. Nutzen Sie die zahlreichen Übungen und Beispiele, um Ihr Wissen zu vertiefen und praktische Fähigkeiten zu entwickeln. Die begleitenden Folien und Materialien aus dem Kurs bieten zusätzliche Unterstützung und vertiefende Informationen.
 
 Ich wünsche Ihnen viel Erfolg und Freude beim Lernen und Entdecken der Welt der Datenbanken, des Data Engineering und der Datenmodellierung!
+
+## Über den Autor
+
+Prof. Dr. Michael Kohlegger ist Lektor für Data Engineering, Data Science und Software Development am Management Center Innsbruck. Bis September 2024 ware er Vizerektor der FH Kufstein Tirol und leitet die Studiengänge Data Science & Intelligent Analytics, Web Engineering & IT Solutions, sowie Coding & Digital Design. In seiner Arbeit beschäftigt er sich mit der Speicherung und Analyse von Daten. Dabei steht eine ganzheitliche Verarbeitung der Daten – von der Erhebung bis zur Analyse – im Fokus seiner Betrachtung.
+
+Neben seiner Leitungs- und Lehrtätigkeit an der FH Kufstein Tirol und der Universität Innsbruck, berät er Unternehmen bei der Umsetzung von datengetrieben Projekten. Nach Studium und Promotion an der Universität Innsbruck im Bereich Wirtschaftsinformatik war er mehrere Jahre in der Wirtschaft tätig, bevor er dem Ruf an die FH Kufstein Tirol folgte.
