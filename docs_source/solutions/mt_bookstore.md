@@ -6,6 +6,17 @@ Für Analysezwecke soll eine Datenbasis erstellt werden, in der Verkaufsvorgäng
 
 Hier eine schnelle Lösung, die alle Vorgaben des Szenarios berücksichtigt. In dieser Lösung gibt es noch etliche Probleme mit Redundanzen (z.B. würden wir eine Person zweimal anlegen, wenn sie bei uns als `employee`arbeitet und als `customer` einkauft). Abgesehen davon ist die Lösung schon ganz gut.
 
+Der Bestand an Büchern ergibt sich dynamisch aus den Einkäufen (`delivery`) und den Verkäufen (`order`). Um zu ermitteln, wie viele Bücher eines bestimmten Buchs (z.B. des Buchs mit der ID 1) auf Lager liegen, kann folgende Abfrage verwendet werden.
+
+```sql
+select book_id, sum(a.quantity) as Verkauf, sum(c.quantity) as Einkauf
+from order as a
+join book as b on a.book_id = b.book_id
+join delivery as c on c.book_id = b.book_id
+where a.book_id = 1
+group by book_id;
+```
+
 ``` mermaid
 erDiagram
 
@@ -184,7 +195,9 @@ erDiagram
 
 ## Optimierte Lösung
 
-In dieser Lösung führen wir Bestandsänderungen in der Tabelle `inventory_change` und bilden so Zugänge (positive ``quantity`` Betrag) und Abgänge (negativer ``quantity`` Betrag) ab. Um den Bestand eines Buches zu ermitteln, müssen wir nur die Summe über alle Bestandsveränderungen für ein bestimmtes Buch bilden. Unterhalb findet ihr eine einfache SQL-Abfrage, um den Bestand von Buch 1 abzufragen:
+In dieser Lösung führen wir Bestandsänderungen in der Tabelle `inventory_change` und bilden so Zugänge (positive ``quantity`` Betrag) und Abgänge (negativer ``quantity`` Betrag) ab. Um den Bestand eines Buches zu ermitteln, müssen wir nur die Summe über alle Bestandsveränderungen für ein bestimmtes Buch bilden. Unterhalb findet ihr eine einfache SQL-Abfrage, um den Bestand von Buch 1 abzufragen. Außerdem wurde die Beziehung zwischen `book` und `author` in eine n:m-Beziehung überführt, weil es Bücher gibt, die von mehreren Autor:innen veröffentlicht werden.
+
+Des Weiteren schaffen wir zwei Kind-Entitätstypen, die mit `inventory_change` zusammenhängen und dazu verwendet werden, einer `order` einen Kunden bzw. einem `delivery` einen Lieferanten zuzuordnen. Wir könnten `customer` und `supplier` natürlich auch direkt mit dem  `inventory_change` in Verbindung setzten, hätten dann aber das Problem, das eines der beiden Felder immer `NULL` wäre.
 
 ```sql
 select book_id, sum(quantity) as Bestand
@@ -198,8 +211,10 @@ erDiagram
 
     author {
         author_id int PK
-        firstname varchar(50)
-        lastname varchar(45)
+    }
+
+    publication {
+        publishing_date date
     }
 
     book {
@@ -220,6 +235,14 @@ erDiagram
         inventory_change_id int PK
         quantity int
         actual_price decimal
+    }
+
+    order {
+        order_id int PK
+    }
+
+    delivery {
+        delivery_id int PK
     }
 
     person {
@@ -248,16 +271,21 @@ erDiagram
         vat_number varchar(20)
     }
 
+    inventory_change ||--o| order : is_a
+    inventory_change ||--o| delivery : is_a
+
     book ||--o{ inventory_change_item : part_of
     inventory_change ||--o{ inventory_change_item : contains
-    author |o--o{ book : authors
+    author |o--o{ publication : contributes_to
+    book |o--o{ publication : subject
 
     person ||--o| customer : is_a
     person ||--o| supplier : is_a
     person ||--o| employee : is_a
+    person ||--o| author : is_a
 
-    inventory_change }o--|| customer : places
+    order }o--|| customer : places
     inventory_change }o--|| employee : takes_care
-    inventory_change }o--o| supplier : sends
+    delivery }o--o| supplier : sends
 
 ```
