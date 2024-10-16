@@ -1,26 +1,25 @@
-# Data Engineering
+# Willkommen zu Ihrem Leitfaden für Datenbanken, Data Engineering und Datenmodellierung
 
-In Data Engineering geht es um die Konzeptionierung von Datenstrukturen, deren Implementierung in geeigneten Datenbanksystemen und der Arbeit mit diesen Datenstrukturen. In diesem Buch fassen wir alle theoretischen und praktischen Grundlagen für diese Tätigkeiten zusammen. Das Buch gliedert sich in zwei teile:
+Herzlich willkommen zu diesem umfassenden Werk, das Ihnen die faszinierende Welt der Datenbanken, des Data Engineering und der Datenmodellierung näherbringen soll. Dieses Buch ist nicht nur ein Begleiter für Ihren Kurs, sondern auch ein wertvolles Nachschlagewerk für Ihre berufliche Praxis und Weiterentwicklung.
 
-*  **Theorieteil:** Hier werden die einzelnen Konzepte beschrieben (im Entstehen)
-*  **Praxisteil:** Hier haben wir Aufgaben zusammengestellt, um das Wissen zu festigen und praktisch anzuwenden (im Entstehen)
+## Warum dieses Buch?
 
-## Data Engineering für **Web Business & Technology**
+In einer Zeit, in der Daten das neue Öl sind, ist das Verständnis und die Beherrschung von Datenbanken und Datenmodellierung unerlässlich. Dieses Buch bietet Ihnen:
 
-Work in Progress
+* **Fundiertes Wissen:** Von den Grundlagen bis zu fortgeschrittenen Konzepten, alles was Sie wissen müssen, um Daten effizient zu speichern, zu verwalten und zu analysieren.
+* **Praktische Beispiele:** Anhand realer Szenarien und Fallstudien lernen Sie, wie Sie theoretisches Wissen in die Praxis umsetzen.
+* **Aktuelle Technologien:** Einblicke in die neuesten Tools und Techniken im Bereich Data Engineering und Datenmodellierung.
 
-## Data Engineering für **Data Science & Intelligent Analytics**
+## Für wen ist dieses Buch gedacht?
 
-* [Mega-Tutorium RDBS](exercises/ds_exercise_01_megatutorial.md)
-* [Individualaufgaben RDBS](exercises/ds_exercise_01_individuals.md)
+Egal, ob Sie Student, Berufseinsteiger oder erfahrener Profi sind, dieses Buch ist so konzipiert, dass es Ihnen auf Ihrem individuellen Lernweg weiterhilft. Es ist ideal für:
 
-* [Mega-Tutorium Neo4J](exercises/ds_exercise_02_megatutorial.md)
-* [Individualaufgaben Neo4J](exercises/ds_exercise_02_individuals.md)
+* Studierende der Informatik und verwandter Fachrichtungen
+* Data Engineers und Datenbankadministratoren
+* IT-Professionals, die ihre Kenntnisse erweitern möchten
 
-* [Mega-Tutorium MongoDB](exercises/ds_exercise_03_megatutorial.md)
-* [Individualaufgaben MongoDB](exercises/ds_exercise_03_individuals.md)
+## Wie nutzen Sie dieses Buch am besten?
 
-* [Mega-Tutorium Cassandra](exercises/ds_exercise_04_megatutorial.md)
-## Datenmodellierung & Datenspeicherung **Web Communication & Information Systems**
+Jedes Kapitel ist so strukturiert, dass es Ihnen einen klaren und verständlichen Überblick über das jeweilige Thema bietet. Nutzen Sie die zahlreichen Übungen und Beispiele, um Ihr Wissen zu vertiefen und praktische Fähigkeiten zu entwickeln. Die begleitenden Folien und Materialien aus dem Kurs bieten zusätzliche Unterstützung und vertiefende Informationen.
 
-* [Mega-Tutorium RDBS](exercises/wcis_exercise_01_megatutorial.md)
+Ich wünsche Ihnen viel Erfolg und Freude beim Lernen und Entdecken der Welt der Datenbanken, des Data Engineering und der Datenmodellierung!
