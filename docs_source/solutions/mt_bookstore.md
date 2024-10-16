@@ -264,6 +264,7 @@ erDiagram
     employee {
         employee_id int PK
         insurance_number varchar(15)
+        birth_date date
     }
 
     supplier {
