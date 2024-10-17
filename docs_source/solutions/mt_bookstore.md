@@ -9,7 +9,7 @@ Hier eine schnelle Lösung, die alle Vorgaben des Szenarios berücksichtigt. In 
 Der Bestand an Büchern ergibt sich dynamisch aus den Einkäufen (`delivery`) und den Verkäufen (`order`). Um zu ermitteln, wie viele Bücher eines bestimmten Buchs (z.B. des Buchs mit der ID 1) auf Lager liegen, kann folgende Abfrage verwendet werden.
 
 ```sql
-select book_id, sum(a.quantity) as Verkauf, sum(c.quantity) as Einkauf
+select book_id, sum(c.quantity) - sum(a.quantity) as Bestand
 from order as a
 join book as b on a.book_id = b.book_id
 join delivery as c on c.book_id = b.book_id
