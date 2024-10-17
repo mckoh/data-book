@@ -1,8 +1,11 @@
 # Willkommen zu Ihrem Leitfaden für Datenbanken, Data Engineering und Datenmodellierung
 
-Herzlich willkommen zu diesem umfassenden Werk, das Ihnen die faszinierende Welt der Datenbanken, des Data Engineering und der Datenmodellierung näherbringen soll. Dieses Buch ist nicht nur ein Begleiter für Ihren Kurs, sondern auch ein wertvolles Nachschlagewerk für Ihre berufliche Praxis und Weiterentwicklung.
+Der Bedarf, Daten zu speichern ist schon so alt wie die Menschheit selbst. Auch unsere Vorfahren wollten das, was sie bewegt für sich und die Nachwelt aufbewahren. Natürlich haben sich die Mittel, die uns heute dazu zur Verfügung stehen stark verändert. Wir bauen heute auf leistungsstarke Datenbanken und strukturieren das, was wir speichern wollen um es von unerwünschtem Kontext zu brefreien. Dennoch bleibt das Thema brand aktuell und hat in unserer modernen Welt nichts an Wichtigkeit eingebüßt.
 
 ![Cave with ](img/cave.jpeg)
+
+
+Herzlich willkommen zu diesem umfassenden Werk, das Ihnen die faszinierende Welt der Datenbanken, des Data Engineering und der Datenmodellierung näherbringen soll. Dieses Buch ist nicht nur ein Begleiter für Ihren Kurs, sondern auch ein wertvolles Nachschlagewerk für Ihre berufliche Praxis und Weiterentwicklung.
 
 ## Warum dieses Buch?
 
