@@ -2,6 +2,8 @@
 
 Herzlich willkommen zu diesem umfassenden Werk, das Ihnen die faszinierende Welt der Datenbanken, des Data Engineering und der Datenmodellierung näherbringen soll. Dieses Buch ist nicht nur ein Begleiter für Ihren Kurs, sondern auch ein wertvolles Nachschlagewerk für Ihre berufliche Praxis und Weiterentwicklung.
 
+![Cave with ](img/cave.jpeg)
+
 ## Warum dieses Buch?
 
 In einer Zeit, in der Daten das neue Öl sind, ist das Verständnis und die Beherrschung von Datenbanken und Datenmodellierung unerlässlich. Dieses Buch bietet Ihnen:
