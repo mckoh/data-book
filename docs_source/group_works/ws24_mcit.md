@@ -29,6 +29,21 @@ Work in groups of 2 people to develop a modeling scenario and, subsequently, a d
 * **Data Modelling Groups 23:** Loan Management for Banks
 * **Data Modelling Groups 24:** Volunteer Coordination for Nonprofits
 * **Data Modelling Groups 25:** Maintenance Scheduling for Facilities Management
+* **Data Modelling Groups 26:** Employee Training Management System
+* **Data Modelling Groups 27:** Fitness Program Tracking for Gyms
+* **Data Modelling Groups 28:** Product Feedback System for Online Stores
+* **Data Modelling Groups 29:** Community Service Project Management
+* **Data Modelling Groups 30:** Digital Asset Management for Marketing Teams
+* **Data Modelling Groups 31:** Financial Portfolio Management for Investment Firms
+* **Data Modelling Groups 32:** Alumni Network Management for Universities
+* **Data Modelling Groups 33:** Waste Management Tracking for Municipalities
+* **Data Modelling Groups 34:** Volunteer Hours Tracking for Charities
+* **Data Modelling Groups 35:** Disaster Response Coordination for Emergency Services
+* **Data Modelling Groups 36:** Smart Home Device Integration
+* **Data Modelling Groups 37:** Language Course Enrollment and Tracking
+* **Data Modelling Groups 38:** Research Project Management for Academic Institutions
+* **Data Modelling Groups 39:** Employee Performance Review System
+* **Data Modelling Groups 40:** Wildlife Conservation Data Tracking
 
 ## Task
 
