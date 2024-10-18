@@ -32,26 +32,27 @@ Work in groups of 2 people to develop a modeling scenario and, subsequently, a d
 
 ## Task
 
-1. **Verbally Formulate your Scenario.**
+### Verbally Formulate your Scenario
 
 * Pick your specific modeling scenario.
 * Discuss and formulate the scenario verbally.
 
-2. **Work with our own scenario.**
+### Work with our own scenario
 
 * Identify the relevant entity types in your scenario.
 * Pick appropriate names for your entities.
 * Draw a data model and add all identified entities.
 
-3. **Normalize your data model.**
+### Normalize your data model
 
 * Use the concept of normalization to optimize your model.
 * Establish relationships between the identified and normalized entities.
 
-4. **Spezifie your data model.**
+### Specify your data model
 
 * Define the cardinality of the identified relationships (e.g., 1:1, 1:n, n:m).
 * Determining Conditionalities of the identified relationships (e.g., mandatory, optional).
+* Define attributes for each entity that should be used.
 
 ## Submission
 
