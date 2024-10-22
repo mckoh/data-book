@@ -1,12 +1,10 @@
-# MegaTutorium: Relationale Datenstrukturen mit SQL
+# MegaTutorium: Research Datenbank
 
 Unsere Aufgabe in diesem Megatutorium ist es, (a) ein **Datenmodell** aus dem unterhalb angeführten Szenario zu entwickeln, (b) dieses so weit wie nötig zu **normalisieren**, (c) es anschließend in MariaDB zu **implementieren**, (d) **Beispieldatensätze** einzufügen und (e) die unten genannten **Abfragen** zu entwickeln.
 
 ## Szenario
 
-Für die Erfassung von Wissenschaftlichen Proben in einem Forschungslabor solle ine Datenbank erstellt werden.
-
-Proben werden an einer bestimmten Stelle und zu einer bestimmten Zeit genommen und im System erfasst. Später können Sie mehrfach analysiert werden. Die Analyse erfolgt von unterschiedlichen Wissenschaftler:innen, die einer Forschungsinstitution und einer Forschungseinheit zugeordnet sind und von denen Name und Emailadresse erfasst werden soll. Die Analyse der Proben erfolgt mit Hilfe unterschiedlicher Analyseverfahren und wird ebenfalls protokolliert. Je nach Analyseverfahren ist die Freigabe durch unterschiedliche Personen des administrativen Personals erforderlich. Auch über für das administrative Personal sind Name und Emailadresse zu erfassen.
+Für die Erfassung von Wissenschaftlichen Proben in einem Forschungslabor solle ine Datenbank erstellt werden. Proben werden an einer bestimmten Stelle und zu einer bestimmten Zeit genommen und im System erfasst. Später können Sie mehrfach analysiert werden. Die Analyse erfolgt von unterschiedlichen Wissenschaftler:innen, die einer Forschungsinstitution und einer Forschungseinheit zugeordnet sind und von denen Name und Emailadresse erfasst werden soll. Die Analyse der Proben erfolgt mit Hilfe unterschiedlicher Analyseverfahren und wird ebenfalls protokolliert. Je nach Analyseverfahren ist die Freigabe durch unterschiedliche Personen des administrativen Personals erforderlich. Auch über für das administrative Personal sind Name und Emailadresse zu erfassen.
 
 ## Aufgaben
 

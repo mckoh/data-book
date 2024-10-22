@@ -88,6 +88,7 @@ nav:
         - Bookstore: exercises/mt_bookstore.md
         - Research: exercises/mt_research.md
         - Web Shop: exercises/mt_webshop.md
+        - Magic Database: exercises/mt_magic.md
       - Neo4J:
         - Employees: exercises/mt_employee.md
       - MongoDB:

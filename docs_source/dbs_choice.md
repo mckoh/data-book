@@ -49,6 +49,7 @@ Führen wir uns noch einmal das oben beschriebene Social-Media-Szenario vor Auge
 
 Um die Abfragegeschwindigkeit zu verbessern, gibt es unterschiedliche Strategien. Zum einen kann die Performanz des Datenbanksystems gesteigert werden, indem das System vertikal oder horizontal skaliert wird. Dadurch werden dem System mehr Hardware-Ressourcen zur Verfügung gestellt, wodurch das System Abfragen schneller bearbeiten kann. Diese Strategie kann bis zu einem gewissen Punkt zielführend sein, hat aber ihre Grenzen. Alternativ dazu kann das logische Modell der Daten verändert werden, z. B. indem Daten, die gemeinsam Abgefragt werden sollen auch gemeinsam gespeichert werden. Dazu muss die Datenstruktur allerdings denormalisiert werden.
 
+<<<<<<< HEAD
 Im vorliegenden Beispiel könnte etwa die Speicherung der Posts von einem zentralen `post`-Speicher in Nutzer:innen-zentrierte `post`-Speicher überführt werden. In jedem dieser dezentralen Speicher würden dann nur jene Posts gespeichert, die von Nutzer:innen verfasst wurden, denen der/die jeweilige Nutzer folgt (die also für den jeweilige(n) Nutzer:in relevant sind).
 
 ```mermaid
@@ -68,6 +69,10 @@ flowchart LR
     id0a --> id2
     id0b --> id1
 ```
+=======
+
+
+>>>>>>> de69b4cf2701fc5d8b0904ce79ee6af093a15d96
 
 [//]: # (2024)
 [//]: # (1100/5830 Posts auf Instagram/X pro Sekunde)
