@@ -4,7 +4,7 @@ Unsere Aufgabe in diesem Megatutorium ist es, (a) ein **Datenmodell** aus dem un
 
 ## Szenario
 
-Für Dokumentationszwecke soll für die Zaubereischule von Hogwarts eine Datenbank erstellt werden, in der alle Aspekte der magischen Welt erfasst werden können. In dieser Datenbasis sollen Schüler (inkl. ihrer Häuser), Lehrer, Unterrichtsfächer, Unerrichtszeiten und Zaubersprüche erfasst werden. Jedem Schüler können Fächer (unterschiedlicher Schwierigkeitsgrade und Klassenstufen) mit zuständigen Lehrern zugeordnet werden. Lehrer von Hogwarts sind in einer Hierarchie eingebettet – für die Analyse ist es wichtig zu wissen, welche Lehrer an welcher Stelle der Schulhierarchie stehen. Außerdem soll der Stundenplan der Schüler in der Datenbank gespeichert werden.
+Für Dokumentationszwecke soll für die Zaubereischule von Hogwarts eine Datenbank erstellt werden, in der alle Aspekte der magischen Welt erfasst werden können. In dieser Datenbasis sollen Schüler (inkl. ihrer Häuser), Lehrer, Unterrichtsfächer, Unerrichtszeiten, Räume und Zaubersprüche erfasst werden. Jedes Fach findet in Hogwarts immer im selben Raum statt. Außerdem ist der Stundenplan für jedes Semester fixiert - Fächer finden also während eines Semesters immer zur selben Zeit am selben Tag statt. Jedem Schüler können Fächer mit zuständigen Lehrern zugeordnet werden. Lehrer von Hogwarts sind in einer Hierarchie eingebettet – für die Analyse ist es wichtig zu wissen, welche Lehrer an welcher Stelle der Schulhierarchie stehen. Jeder Lehrer unterrichtet mehrere Fächer. Jedes Fach ist aber genau einem Lehrer zugeordnet. Diese Zuordnung kann sich aber über die Zeit hin ändern.
 
 ## Aufgaben
 
