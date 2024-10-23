@@ -72,15 +72,6 @@ copyright: Copyright &copy; 2024 Michael Kohlegger
 # Navigation
 nav:
     - Home: index.md
-    - Tutorials:
-      - Entitätstypen: mariadb_tutorial/entity.md
-      - 1:n Beziehung: mariadb_tutorial/onemany.md
-      - n:m Beziehung: mariadb_tutorial/manymany.md
-      - WITH-Klausel: mariadb_tutorial/with.md
-      - DBS Interaktion: dbs_interaction.md
-      - Docker: docker.md
-      - Data Engineering Checkliste: de_checklist.md
-
+    - Lerninhalte: tutorials.md
     - Übungsaufgaben: exercises.md
-
     - Über: about.md
