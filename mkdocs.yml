@@ -72,33 +72,15 @@ copyright: Copyright &copy; 2024 Michael Kohlegger
 # Navigation
 nav:
     - Home: index.md
-    - Relational DBS Tutorial:
+    - Tutorials:
       - Entitätstypen: mariadb_tutorial/entity.md
       - 1:n Beziehung: mariadb_tutorial/onemany.md
       - n:m Beziehung: mariadb_tutorial/manymany.md
       - WITH-Klausel: mariadb_tutorial/with.md
-
-    - Other Tutorials:
       - DBS Interaktion: dbs_interaction.md
-      - Data Engineering Checkliste: de_checklist.md
       - Docker: docker.md
+      - Data Engineering Checkliste: de_checklist.md
 
-    - Mega Tutorials:
-      - MariaDB:
-        - Bookstore: exercises/mt_bookstore.md
-        - Research: exercises/mt_research.md
-        - Web Shop: exercises/mt_webshop.md
-        - Magic Database: exercises/mt_magic.md
-      - Neo4J:
-        - Employees: exercises/mt_employee.md
-      - MongoDB:
-        -  User Profile: exercises/mt_userprofile.md
-      - Cassandra:
-        - Booking: exercises/mt_booking.md
-
-    - Individual Exercises:
-      - Individualaufgaben RDBS: exercises/ds_exercise_01_individuals.md
-      - Individualaufgaben Neo4J: exercises/ds_exercise_02_individuals.md
-      - Individualaufgaben MongoDB: exercises/ds_exercise_03_individuals.md
+    - Übungsaufgaben: exercises.md
 
     - Über: about.md
