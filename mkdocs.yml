@@ -25,14 +25,26 @@ theme:
     - navigation.footer
     - toc.integrate # integrates section menu to nav
     - navigation.top # adds a top to button
-  palette:
-    scheme: slate
-    primary: blue grey # teal
+
   shortcuts:
     help: 191    # ?
     next: 78     # n
     previous: 80 # p
     search: 83   # s
+
+  palette:
+    - primary: blue grey # teal
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-1
+        name: Switch to light mode
 
 extra:
   social:
