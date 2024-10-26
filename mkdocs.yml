@@ -15,7 +15,7 @@ theme:
     - content.code.copy
     - navigation.tabs
     #- navigation.tabs.sticky
-    - navigation.sections
+    #- navigation.sections
     - navigation.path
     - navigation.footer
     - navigation.expand
