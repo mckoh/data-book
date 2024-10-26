@@ -12,10 +12,13 @@ theme:
   icon:
     logo: material/database
   features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - content.code.copy
-    - navigation.tabs
+    #- navigation.tabs
     #- navigation.tabs.sticky
-    #- navigation.sections
+    - navigation.sections
     - navigation.path
     - navigation.footer
     - navigation.expand
