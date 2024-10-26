@@ -7,6 +7,7 @@ site_author: Michael Kohlegger
 copyright: © 2020, MK
 strict: false
 
+# https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
 theme:
   name: material
   icon:
@@ -16,12 +17,14 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - content.code.copy
-    #- navigation.tabs
-    #- navigation.tabs.sticky
+    #- navigation.tabs # creates top bar menu
+    #- navigation.tabs.sticky # lets tabs stick
+    #- navigation.expand # expands navigation to depth
     - navigation.sections
     - navigation.path
     - navigation.footer
-    - navigation.expand
+    - toc.integrate # integrates section menu to nav
+    - navigation.top # adds a top to button
   color_mode: dark
   palette:
     primary: indigo # teal
