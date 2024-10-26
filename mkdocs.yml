@@ -25,9 +25,9 @@ theme:
     - navigation.footer
     - toc.integrate # integrates section menu to nav
     - navigation.top # adds a top to button
-  color_mode: dark
   palette:
-    primary: indigo # teal
+    scheme: slate
+    primary: blue grey # teal
   shortcuts:
     help: 191    # ?
     next: 78     # n
