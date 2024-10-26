@@ -33,18 +33,21 @@ theme:
     search: 83   # s
 
   palette:
-    - primary: blue grey # teal
+
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: blue grey
       toggle:
-        icon: material/brightness-1
+        icon: material/lightbulb
         name: Switch to light mode
+
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: blue grey
       toggle:
-        icon: material/brightness-7
+        icon: material/lightbulb-outline
         name: Switch to dark mode
 
 extra:
