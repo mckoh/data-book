@@ -6,7 +6,7 @@ Mit Hilfe der Common Table Expression ist es Möglich Views zu erstellen, die nu
 
 Unterhalb erzeugen wir zuerst eine Simple Datenbank, die einen Entitätstyp enthält, der mit sich selbst in Beziehung steht. Die Beziehung bildet folgende Mitarbeiter*innen-Hierarchie ab:
 
-![Employee Hierarchy Image](../img/hierarchy.png)
+![Employee Hierarchy Image](../../img/hierarchy.png)
 
 ```sql
 create database human_resource;
@@ -33,7 +33,7 @@ erDiagram
         varchar50 firstname
         varchar50 lastname
     }
-    
+
     employee }o--o| employee : "leads / is_led"
 ```
 
@@ -93,4 +93,4 @@ select *
 from recursive_view;
 ```
 
-Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../downloads/employee.sql).
+Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../../downloads/employee.sql).

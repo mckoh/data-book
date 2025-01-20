@@ -53,4 +53,4 @@ create table if not exists student (
 );
 ```
 
-Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../downloads/student.sql).
+Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../../downloads/student.sql).

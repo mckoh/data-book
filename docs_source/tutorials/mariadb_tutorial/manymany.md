@@ -128,4 +128,4 @@ create table if not exists enrollment (
 );
 ```
 
-Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../downloads/student_program_course.sql).
+Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../../downloads/student_program_course.sql).

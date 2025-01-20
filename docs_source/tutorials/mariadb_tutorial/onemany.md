@@ -26,7 +26,7 @@ erDiagram
     program {
         integer_PK program_id
         varchar50 title
-        date foundation_date        
+        date foundation_date
     }
     student }o--|| program : ""
 ```
@@ -89,4 +89,4 @@ create table if not exists student (
 );
 ```
 
-Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../downloads/student_program.sql).
+Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 [hier herunterladen](../../downloads/student_program.sql).
