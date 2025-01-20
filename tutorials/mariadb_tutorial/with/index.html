@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Michael Kohlegger" name="author"/>
+<link href="https://mckoh.github.io/data-book/tutorials/mariadb_tutorial/with/" rel="canonical"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.50" name="generator"/>
+<title>Common Table Expression - Data Book</title>
+<link href="../../../assets/stylesheets/main.a40c8224.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="blue-grey" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#common-table-expression">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Data Book" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Data Book">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Data Book
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Common Table Expression
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue-grey" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue-grey" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Data Book" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Data Book">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg>
+</a>
+    Data Book
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Lerninhalte
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exercises/">
+<span class="md-ellipsis">
+    Übungsaufgaben
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/">
+<span class="md-ellipsis">
+    Über
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="common-table-expression">Common Table Expression</h1>
+<p>Mit Hilfe der Common Table Expression ist es Möglich Views zu erstellen, die nur in der Laufzeit der Abfrage existieren (also anders als klassische Views nicht gespeichert werden). Diese Views haben aber auch eine zweite wichtige Eigenschaft: Sie können rekursiv aufgerufen werden. In MariaDB kann so ein View mit Hilfe der <code>with recursive</code> Klausel erzeugt werden.</p>
+<h2 id="beispiel-datenbank">Beispiel Datenbank</h2>
+<p>Unterhalb erzeugen wir zuerst eine Simple Datenbank, die einen Entitätstyp enthält, der mit sich selbst in Beziehung steht. Die Beziehung bildet folgende Mitarbeiter*innen-Hierarchie ab:</p>
+<p><img alt="Employee Hierarchy Image" src="../../../img/hierarchy.png"/></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">human_resource</span><span class="p">;</span>
+<span class="n">use</span><span class="w"> </span><span class="n">human_resource</span><span class="p">;</span>
+
+<span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">employee_id</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<span class="w">    </span><span class="n">firstname</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="n">lastname</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="n">boss_id</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+<span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="p">(</span><span class="n">boss_id</span><span class="p">)</span>
+<span class="w">    </span><span class="k">references</span><span class="w"> </span><span class="n">employee</span><span class="p">(</span><span class="n">employee_id</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Im Modell würde die hier abgebildete Datenbank wie folgt aussehen. Auch hier ist zu beachten, dass der Fremdschlüssel <code>boss_id</code> nicht im Modell dargestellt wird.</p>
+<div class="mermaid">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+
+erDiagram
+    employee {
+        integer_PK employee_id
+        varchar50 firstname
+        varchar50 lastname
+    }
+
+    employee }o--o| employee : "leads / is_led"
+</div>
+<h2 id="rekursivbeziehung-abfragen-eine-ebene">Rekursivbeziehung abfragen (Eine Ebene)</h2>
+<p>Nun wollen wir die Ebenen der Hierarchie abwandern und ermitteln, welche Mitarbeiter*innen sich auf welcher Hierarchieebene befinden. Das ist in der Praxis aber gar nicht so einfach.</p>
+<p>Es fällt uns leicht, zwei aneinander angrenzende Ebenen der Hierarchie Abzufragen. Das können wir machen, indem wir die Tabelle mit sich selbst durch einen <code>JOIN</code> verbinden. So können wir die Bossebene und die Ebene der direkten Untergebenen abbilden.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">boss</span><span class="p">.</span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="n">lastname</span>
+<span class="k">from</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">boss</span>
+<span class="k">join</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">emp</span>
+<span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="n">boss_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">boss</span><span class="p">.</span><span class="n">employee_id</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="rekursivbeziehung-abfragen-mehrere-ebenen">Rekursivbeziehung abfragen (Mehrere Ebenen)</h2>
+<p>Das funktioniert zwar gut, aber wir sehen immer nur welche Person, welcher anderen Person übergeordnet/untergeben ist. Was wir hieraus nur schwer rekonstruieren können, ist die Gesamthierarchie. Wir sehen hier z.B. nicht, welche Mitarbeiter*in sich auf welcher Ebene der Hierarchie befindet und wieviele Ebenen unsere Hierarchie überhaupt hat. Das müssen wir uns nach wie vor aus den Ergebnissen mühsam zusammensuchen.</p>
+<p>Natürlich wäre es möglich, das oben gezeigte Statement um zusätzliche Ebenen zu erweitern und so die Hierarchie abzubilden. Im Statement unterhalb würden wir nun z.B. drei aneinander angrenzende Level der Hierarchie sehen. Wenn unsere Hierachie aber tatsächlich vier Level tief ist, sehen wir dennoch nicht alles.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">top_level</span><span class="p">.</span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">mid_level</span><span class="p">.</span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="n">bottom_level</span><span class="p">.</span><span class="n">lastname</span>
+<span class="k">from</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">top_level</span>
+<span class="k">join</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">mid_level</span>
+<span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="n">mid_level</span><span class="p">.</span><span class="n">boss_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">top_level</span><span class="p">.</span><span class="n">employee_id</span>
+<span class="k">join</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">bottom_level</span>
+<span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="n">bottom_level</span><span class="p">.</span><span class="n">boss_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid_level</span><span class="p">.</span><span class="n">employee_id</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Was ist hier unser Problem?</strong> Unser Problem hier ist, dass unser SQL-Statement an die Hierarchie angepasst werden muss. Abhängig davon, wieviele Ebenen diese Hierarchie hat, müssen wir mehr oder weniger <code>JOIN</code> Operationen in unser Statement einbauen. Hat die Hierarchie fünf Ebenen, brauchen wir die <code>employee</code>-Tabelle fünfmal. Hat die Hierarchie 12 Ebenen, brauchen wir die <code>employee</code>-Tablle 12 mal usw..</p>
+<h2 id="rekursivbeziehung-abfragen-alle-ebene">Rekursivbeziehung abfragen (Alle Ebene)</h2>
+<p>Hier kommt nun die <strong>Common Table Expression</strong> ins Spiel. Mit Hilfe dieses SQL-Konstrukts, können wir unsere Hierarchie abwandern, ohne die Tiefe der Hierarchie bereits zu kennen. Das erreichen wir, indem wir das CTE-Statement rekursiv aufrufen können.</p>
+<p>Im Beispiel unterhalb besteht der View im CTE aus zwei Teilen. Im ersten Teil ermitteln wir den Startpunkt unserer Hierarchie. Das sind jene Mitarbeiter*innen, die ganz oben stehen und selbst keine Vorgesetzte besitzen (<code>where boss_id is null</code>). Im zweiten Teil des Statements fügen wir dann alle Personen hinzu die auf der nächsten, darunterliegenden Ebene stehen. Hierzu rufen wir das CTE selbst wieder auf (<code>from recursive_view as parent</code>) und fügen die nächste Ebene mit Hilfe eines <code>JOIN</code> dazu. So bauen wir in mehreren Iterationen die Hierarchie auf.</p>
+<p>Am ende des CTE kommt ein <code>select</code> welches das CTE zu guter letzt aufruft. Dadurch erfolgt dann die Ausgabe. Achtung: Dieser Aufruf ist zwingend erforderlich und muss immer unmittelbar hinter der <code>with</code>-Klausel folgen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">with</span><span class="w"> </span><span class="k">recursive</span><span class="w"> </span><span class="n">recursive_view</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+
+<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">employee_id</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">employee</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="o">`</span><span class="k">level</span><span class="o">`</span>
+<span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">employee</span>
+<span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">boss_id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span>
+
+<span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">child</span><span class="p">.</span><span class="n">employee_id</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">.</span><span class="n">lastname</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="k">level</span><span class="o">`</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="o">`</span><span class="k">level</span><span class="o">`</span>
+<span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">recursive_view</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">parent</span>
+<span class="w">    </span><span class="k">join</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">child</span>
+<span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="n">parent</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">.</span><span class="n">boss_id</span>
+
+<span class="p">)</span>
+
+<span class="k">select</span><span class="w"> </span><span class="o">*</span>
+<span class="k">from</span><span class="w"> </span><span class="n">recursive_view</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>Das vollständige Beispiel (inklusive Beispieldaten) könnt ihr euch 📁 <a href="../../../downloads/employee.sql">hier herunterladen</a>.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 Michael Kohlegger
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/mckoh" rel="noopener" target="_blank" title="Michael Kohlegger on Github">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "content.code.copy", "navigation.sections", "navigation.path", "navigation.footer", "toc.integrate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
