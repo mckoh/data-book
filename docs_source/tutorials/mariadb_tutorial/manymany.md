@@ -1,6 +1,6 @@
 # n:m-Beziehungstyp
 
-Wir haben den 1:n-Beziehungstyp kennengelernt, mit dessen hilfe wir einen großen Teil der Beziehungen modellieren könne, denen wir in der Praxis begegnen - ein Datenobjekt steht mit mehreren Datenobjekten in Beziehung. Allerdings gibt es in der Data Engineering Praxis auch Situationen, wo dieser Beziehungstyp nicht ausreicht. 
+Wir haben den 1:n-Beziehungstyp kennengelernt, mit dessen hilfe wir einen großen Teil der Beziehungen modellieren könne, denen wir in der Praxis begegnen - ein Datenobjekt steht mit mehreren Datenobjekten in Beziehung. Allerdings gibt es in der Data Engineering Praxis auch Situationen, wo dieser Beziehungstyp nicht ausreicht.
 
 Schauen wir uns z.B. die Beziehung zwischen Studierenden und Kursen an einer Universität an, stellen wir fest, dass hier der 1:n-Beziehungstyp nicht in der Lage ist, die natürliche Beziehung dieser beiden Entitätstypen zu beschreiben: Eine Studierende kann mehrere Kurse belegen. Jeder Kurs kann aber von mehreren Studierenden belegt werden. Hier benötigen wir den n:m-Beziehungstyp, um diesen Umstand in einem Datenmodell erfassen zu können.
 
@@ -8,11 +8,11 @@ Schauen wir uns z.B. die Beziehung zwischen Studierenden und Kursen an einer Uni
 
 Bleiben wir beim oben beschriebenen Beispiel: Eine Studierende kann mehrere Kurse belegen. Jeder Kurs kann aber gleichzeitig von mehreren Studierenden belegt werden. In der Mengendarstellung unterhalb wird dieser Sachverhalt abgebildet.
 
-![Mengendarstellung](../img/studentcourseset.png)
+![Mengendarstellung](../../img/studentcourseset.png)
 
 Hier ist leicht erkennbar, dass z.B. Student_in 1 die Kurse a, b und c belegt. So ergibt sich ein "Krähenfuß" (hier orange abgebildet), der von der linken in die rechte Menge läuft. Gleichzeitig kann erkannt werden, dass z.B. Kurs c von den Student_innen 1, 2 und 3 belegt wird. Deshalb entsteht noch ein zweiter "Krähenfuß" (hier grün dargestellt), der von der rechten in die linke Menge läuft.
 
-In der Mengendarstellung gehen wir außerdem davon aus, dass es keine Studierenden geben kann, die keinen einzigen Kurs belegen. Das würde z.B. auf die dargestellte Student_in 4 zutreffen (weshalb diese mit einem roten X markiert ist). Auf Seite der Kurse gehen wir hingegen davon aus, dass es sehr wohl Kurse geben kann, die bisher von noch keiner Studen_in belegt wurden - z.B. weil sich noch niemand in den Kurs eingeschrieben hat. 
+In der Mengendarstellung gehen wir außerdem davon aus, dass es keine Studierenden geben kann, die keinen einzigen Kurs belegen. Das würde z.B. auf die dargestellte Student_in 4 zutreffen (weshalb diese mit einem roten X markiert ist). Auf Seite der Kurse gehen wir hingegen davon aus, dass es sehr wohl Kurse geben kann, die bisher von noch keiner Studen_in belegt wurden - z.B. weil sich noch niemand in den Kurs eingeschrieben hat.
 
 Überführen wir die Informationen, die wir in der Mengendarstellung gewonnen haben in ein allgemeines Modell, so würde sich folgendes Datenmodell ergeben.
 
@@ -46,7 +46,7 @@ Mit diesem Wissen kann die Beziehung zwischen Student_in und Kurs als n:m-Bezieh
 
 ## Implementierung
 
-Beim 1:n-Beziehungstyp hatten wir zur datenbankseitigen Implementierung einen Fremdschlüssel verwendet. Diesen hatten wir auf der n-Seite der Beziehung vorgesehen. Nun bleibt noch die Frage, wie ein n:m-Beziehungstyp datenbankseitig implementiert werden kann. 
+Beim 1:n-Beziehungstyp hatten wir zur datenbankseitigen Implementierung einen Fremdschlüssel verwendet. Diesen hatten wir auf der n-Seite der Beziehung vorgesehen. Nun bleibt noch die Frage, wie ein n:m-Beziehungstyp datenbankseitig implementiert werden kann.
 
 Hierzu ist in der Praxis eine zusätzliche Tabelle - oft Auflösungstabelle (im Englischen auch "Link table") genannt - notwendig. Diese Tabelle wird zwischen die beiden Stammtabellen eingebaut. Die Auflösungstabelle stellt dabei einen eigenen Entitätstyp dar und kann auch im Modell wie folgt dargestellt werden.
 
@@ -83,7 +83,7 @@ Die ursprünglichen Krähenfüße können bei der Auflösung der n:m-Beziehung d
 
 >**Praxis Tipp:** Wir empfehlen n:m-Beziehungen stets in ihrer aufgelösten Form im Modell abzubilden. Dadurch kann im Modell explizit beschrieben werden wie (a) die Auflösungstabelle benannt werden und (b) welche zusätzlichen Attribute diese enthalten soll. Alternativ wäre aber auch die verdichtete Darstellung möglich.
 
-Unterhalb beginnen wir mit er datenbankseitige Umsetzung des oben dargestellten Modells. Dazu erzeugen wir die Datenbank und erstellen die beiden Tabellen `student` und `course`. 
+Unterhalb beginnen wir mit er datenbankseitige Umsetzung des oben dargestellten Modells. Dazu erzeugen wir die Datenbank und erstellen die beiden Tabellen `student` und `course`.
 
 ``` sql
 drop database if exists university;
