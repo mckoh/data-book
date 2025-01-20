@@ -84,8 +84,8 @@ markdown_extensions:
 plugins:
     - mermaid2
 
-extra_javascript:
-    - https://unpkg.com/mermaid/dist/mermaid.min.js
+# extra_javascript:
+#    - https://unpkg.com/mermaid/dist/mermaid.min.js
 
 copyright: Copyright &copy; 2024 Michael Kohlegger
 
